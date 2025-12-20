@@ -1,19 +1,37 @@
-import { TouchableOpacity, Text } from "react-native";
+import { 
+    StyleSheet,
+    TouchableOpacity, 
+    Text 
+} from "react-native";
 
-export default function SubmitBtn() {
+interface Props {
+    buttonLabel: string,
+    backgroundColor?: string
+}
+
+export default function SubmitBtn({buttonLabel, backgroundColor = "#6200EE"}: Props) {
     return (
         <TouchableOpacity
-            style={{
-                backgroundColor: "#6200EE",
-                paddingVertical: 12,
-                paddingHorizontal: 32,
-                borderRadius: 4,
-                alignItems: "center",
-            }}
+            style={[style.button, {backgroundColor: backgroundColor}]}
         >
-            <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" }}>
-                Enviar
+            <Text style={style.buttonLabel}>
+                {buttonLabel}
             </Text>
         </TouchableOpacity>
     );
 }
+
+const style = StyleSheet.create({
+    button: {
+        paddingVertical: 12,
+        paddingHorizontal: 32,
+        borderRadius: 4,
+        alignItems: "center",
+        marginBottom: 30
+    },
+    buttonLabel: {
+        color: "white", 
+        fontSize: 16, 
+        fontWeight: "bold" 
+    }
+})
