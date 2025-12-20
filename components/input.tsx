@@ -11,7 +11,8 @@ interface Props {
     placeholderName: string,
     password?: boolean,
     backgroundColor?: string,
-    fontColor?: string
+    fontColor?: string,
+    verticalSpace?: number
 }
 
 export default function Input(
@@ -20,10 +21,11 @@ export default function Input(
         placeholderName,
         password = false,
         backgroundColor = 'white',
-        fontColor = 'black'
+        fontColor = 'black',
+        verticalSpace = 30
     }: Props){
     return (
-        <View style = {[styles.container, {backgroundColor: backgroundColor}]} >
+        <View style = {[styles.container, {backgroundColor: backgroundColor, marginBottom: verticalSpace}]} >
             <Text style = {[styles.label, {backgroundColor: backgroundColor, color: fontColor}]} >
                 {labelName}
             </Text>
@@ -41,7 +43,6 @@ const styles = StyleSheet.create({
     container : {
         width: '100%',
         position: 'relative',
-        marginBottom: 30,
     },
     label : {
         zIndex: 2,

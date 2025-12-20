@@ -8,9 +8,10 @@ import SubmitBtn from "./submitBtn";
 
 interface Props {
     color?: string
+    verticalSpace? : number
 }
 
-export default function LoginCard({color = "#8744e4ff"}: Props) {
+export default function LoginCard({color = "#8744e4ff", verticalSpace}: Props) {
     return (
         <View style={{width: "85%"}}>
             <View>
@@ -19,10 +20,10 @@ export default function LoginCard({color = "#8744e4ff"}: Props) {
                     style={[styles.image, {borderColor: color}]} 
                 />
             </View>
-            <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor={color} password={false} />
-            <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor={color} password={true} />
+            <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor={color} password={false} verticalSpace={verticalSpace}/>
+            <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor={color} password={true} verticalSpace={verticalSpace}/>
             <SubmitBtn buttonLabel="Iniciar Sesion" backgroundColor={color}/>
-            <SubmitBtn buttonLabel="Registrarse" backgroundColor="#a4a4a4ff"/>
+            <SubmitBtn buttonLabel="Registrarse" backgroundColor={color}/>
         </View>
     )
 }

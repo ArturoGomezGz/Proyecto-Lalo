@@ -1,5 +1,6 @@
 import { Text, View } from "react-native";
 import LoginCard from "../components/loginCard";
+import CreateAcountCard from "../components/createAcountCard";
 
 export default function Index() {
   return (
@@ -10,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <LoginCard />
+      <CreateAcountCard verticalSpace={20}/>
     </View>
   );
 }
