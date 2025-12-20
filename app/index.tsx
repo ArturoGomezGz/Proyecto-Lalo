@@ -11,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <LoginCard verticalSpace={20}/>
+      <CreateAcountCard verticalSpace={20}/>
     </View>
   );
 }
