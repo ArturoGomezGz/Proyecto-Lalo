@@ -4,6 +4,7 @@ import {
     Image
 } from "react-native";
 import Input from "./input";
+import SubmitBtn from "./submitBtn";
 
 interface Props {
 
@@ -20,6 +21,7 @@ export default function LoginCard() {
             </View>
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor="#79747E" password={false} />
             <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor="#79747E" password={true} />
+            <SubmitBtn />
         </View>
     )
 }
