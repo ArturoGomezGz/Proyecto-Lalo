@@ -1,9 +1,9 @@
-import { 
+import {
     View
 } from "react-native";
-import Input from "./input";
-import SubmitBtn from "./submitBtn";
-import Switch from "./switch";
+import Input from "../input";
+import SubmitBtn from "../submitBtn";
+import Switch from "../switch";
 
 interface Props {
     color?: string;

@@ -12,8 +12,8 @@ interface Props {
 
 export default function Switch({ color = "#000", verticalSpace = 10 }: Props) {
     return (
-        <View>
-            <View style={[styles.container, { marginBottom: verticalSpace }]}>
+        <View style ={styles.container}>
+            <View style={[styles.subContainer, { marginBottom: verticalSpace }]}>
                 <Text style={[styles.label, { color: color } ]}>Private</Text>
                 <RNDSwitch />
             </View>
@@ -23,10 +23,14 @@ export default function Switch({ color = "#000", verticalSpace = 10 }: Props) {
 
 const styles = StyleSheet.create({
     container: {
+        marginLeft: "auto",
+        marginRight: 0
+        
+    },
+    subContainer: {
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        
     },
     label: {
         marginRight: 10,

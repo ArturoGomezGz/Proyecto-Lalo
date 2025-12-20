@@ -3,8 +3,8 @@ import {
     View,
     Image
 } from "react-native";
-import Input from "./input";
-import SubmitBtn from "./submitBtn";
+import Input from "../input";
+import SubmitBtn from "../submitBtn";
 
 interface Props {
     color?: string
@@ -16,7 +16,7 @@ export default function LoginCard({color = "#8744e4ff", verticalSpace}: Props) {
         <View style={{width: "85%"}}>
             <View>
                 <Image 
-                    source={require("../assets/images/profileImage.png")} 
+                    source={require("../../assets/images/profileImage.png")} 
                     style={[styles.image, {borderColor: color}]} 
                 />
             </View>
