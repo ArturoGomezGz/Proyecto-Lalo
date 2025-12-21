@@ -24,7 +24,7 @@ export default function CreateAcountCard({color = "#8744e4ff", backgroundColor =
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor={backgroundColor} fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Contraseña" placeholderName="********" backgroundColor={backgroundColor} fontColor={color} password={true} verticalSpace={verticalSpace}/>
             <PrimaryBtn buttonLabel="Crear Cuenta" backgroundColor={color} verticalSpace={verticalSpace}/>
-            <SecondaryBtn buttonLabel="Ya tengo una cuenta" backgroundColor={color} verticalSpace={verticalSpace} onPress={() => router.back()}/>
+            <SecondaryBtn buttonLabel="Ya tengo una cuenta" backgroundColor={color} verticalSpace={verticalSpace} onPress={() => router.push("/login")}/>
         </View>
     );
 }

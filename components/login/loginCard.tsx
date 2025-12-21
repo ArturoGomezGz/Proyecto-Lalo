@@ -26,8 +26,8 @@ export default function LoginCard({color = "#8744e4ff", backgroundColor = "white
             </View>
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor={backgroundColor} fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Contraseña" placeholderName="********" backgroundColor={backgroundColor} fontColor={color} password={true} verticalSpace={verticalSpace}/>
-            <PrimaryBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin}/>
-            <SecondaryBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount}/>
+            <PrimaryBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin} verticalSpace={verticalSpace}/>
+            <SecondaryBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount} verticalSpace={verticalSpace}/>
         </View>
     )
 }
