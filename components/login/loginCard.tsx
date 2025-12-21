@@ -3,15 +3,20 @@ import {
     View,
     Image
 } from "react-native";
+import { 
+    router 
+} from "expo-router";
 import Input from "../input";
 import SubmitBtn from "../submitBtn";
 
 interface Props {
     color?: string
     verticalSpace? : number
+    handleLogin?: () => void
+    handleCreateAcount?: () => void
 }
 
-export default function LoginCard({color = "#8744e4ff", verticalSpace}: Props) {
+export default function LoginCard({color = "#8744e4ff", verticalSpace, handleLogin, handleCreateAcount}: Props) {
     return (
         <View style={{width: "85%"}}>
             <View>
@@ -22,8 +27,8 @@ export default function LoginCard({color = "#8744e4ff", verticalSpace}: Props) {
             </View>
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor={color} password={true} verticalSpace={verticalSpace}/>
-            <SubmitBtn buttonLabel="Iniciar Sesion" backgroundColor={color}/>
-            <SubmitBtn buttonLabel="Registrarse" backgroundColor={color}/>
+            <SubmitBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin}/>
+            <SubmitBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount}/>
         </View>
     )
 }

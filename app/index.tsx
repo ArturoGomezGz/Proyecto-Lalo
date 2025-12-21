@@ -1,17 +1,5 @@
-import { View } from "react-native";
-import CreateAcountCard from "../components/createAcount/createAcountCard";
-import LoginCard from "@/components/login/loginCard";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <CreateAcountCard verticalSpace={20}/>
-    </View>
-  );
+  return <Redirect href="/(auth)/login" />;
 }

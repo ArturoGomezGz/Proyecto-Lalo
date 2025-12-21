@@ -7,13 +7,15 @@ import {
 interface Props {
     buttonLabel: string,
     backgroundColor?: string,
-    verticalSpace?: number
+    verticalSpace?: number,
+    onPress?: () => void
 }
 
-export default function SubmitBtn({buttonLabel, backgroundColor = "#6200EE", verticalSpace = 30}: Props) {
+export default function SubmitBtn({buttonLabel, backgroundColor = "#6200EE", verticalSpace = 30, onPress}: Props) {
     return (
         <TouchableOpacity
             style={[style.button, {backgroundColor: backgroundColor, marginBottom: verticalSpace}]}
+            onPress={onPress}
         >
             <Text style={style.buttonLabel}>
                 {buttonLabel}
