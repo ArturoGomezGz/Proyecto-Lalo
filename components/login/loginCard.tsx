@@ -1,13 +1,11 @@
-import { 
+import {
+    Image,
     StyleSheet,
-    View,
-    Image
+    View
 } from "react-native";
-import { 
-    router 
-} from "expo-router";
+import PrimaryBtn from "../buttons/primaryBtn";
+import SecondaryBtn from "../buttons/secondaryBtn";
 import Input from "../input";
-import SubmitBtn from "../submitBtn";
 
 interface Props {
     color?: string
@@ -27,8 +25,8 @@ export default function LoginCard({color = "#8744e4ff", verticalSpace, handleLog
             </View>
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor={color} password={true} verticalSpace={verticalSpace}/>
-            <SubmitBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin}/>
-            <SubmitBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount}/>
+            <PrimaryBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin}/>
+            <SecondaryBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount}/>
         </View>
     )
 }

@@ -1,11 +1,9 @@
 import {
-    StyleSheet,
-    View,
     Image,
-    Text,
-    TouchableOpacity
+    StyleSheet,
+    View
 } from "react-native";
-import SubmitBtn from "../submitBtn";
+import PrimaryBtn from "../buttons/primaryBtn";
 
 interface Props {
     color?: string;
@@ -19,7 +17,7 @@ export default function CreateAcountPicture({ color, verticalSpace }: Props) {
                 source={require("../../assets/images/profileImage.png")} 
                 style={[styles.imagen, {borderColor: color}]}
             />
-            <SubmitBtn buttonLabel="Cambiar Foto" backgroundColor="gray" verticalSpace={0}/>
+            <PrimaryBtn buttonLabel="Cambiar Foto" backgroundColor="gray" verticalSpace={0}/>
         </View>
     );
 }

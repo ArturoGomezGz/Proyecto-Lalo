@@ -1,7 +1,7 @@
-import { 
+import {
     StyleSheet,
-    TouchableOpacity, 
-    Text 
+    Text,
+    TouchableOpacity
 } from "react-native";
 
 interface Props {
@@ -11,13 +11,13 @@ interface Props {
     onPress?: () => void
 }
 
-export default function SubmitBtn({buttonLabel, backgroundColor = "#6200EE", verticalSpace = 30, onPress}: Props) {
+export default function SecondaryBtn({buttonLabel, backgroundColor = "#6200EE", verticalSpace = 30, onPress}: Props) {
     return (
         <TouchableOpacity
-            style={[style.button, {backgroundColor: backgroundColor, marginBottom: verticalSpace}]}
+            style={[style.button, {borderColor: backgroundColor, marginBottom: verticalSpace}]}
             onPress={onPress}
         >
-            <Text style={style.buttonLabel}>
+            <Text style={[style.buttonLabel, {color: backgroundColor}]}>
                 {buttonLabel}
             </Text>
         </TouchableOpacity>
@@ -26,10 +26,11 @@ export default function SubmitBtn({buttonLabel, backgroundColor = "#6200EE", ver
 
 const style = StyleSheet.create({
     button: {
-        paddingVertical: 12,
-        paddingHorizontal: 32,
+        paddingVertical: 10,
+        paddingHorizontal: 30,
         borderRadius: 4,
-        alignItems: "center"
+        alignItems: "center",
+        borderWidth: 2
     },
     buttonLabel: {
         color: "white", 

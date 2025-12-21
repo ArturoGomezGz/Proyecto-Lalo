@@ -1,8 +1,8 @@
 import {
     View
 } from "react-native";
+import PrimaryBtn from "../buttons/primaryBtn";
 import Input from "../input";
-import SubmitBtn from "../submitBtn";
 import Switch from "../switch";
 import CreateAcountPicture from "./createAcountPicture";
 
@@ -20,7 +20,7 @@ export default function CreateAcountCard({color = "#8744e4ff", verticalSpace=30}
             <Input labelName="Telefono" placeholderName="1234567890" backgroundColor="#F2F2F2" fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor="#F2F2F2" fontColor={color} password={false} verticalSpace={verticalSpace}/>
             <Input labelName="Contraseña" placeholderName="********" backgroundColor="#F2F2F2" fontColor={color} password={true} verticalSpace={verticalSpace}/>
-            <SubmitBtn buttonLabel="Crear Cuenta" backgroundColor={color}/>
+            <PrimaryBtn buttonLabel="Crear Cuenta" backgroundColor={color}/>
         </View>
     );
 }
