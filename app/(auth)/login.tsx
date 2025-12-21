@@ -7,7 +7,7 @@ const handleCreateAcount = () => {
 }
 
 const handleLogin = () => {
-  console.log("Login pressed");
+  router.push("/(tabs)/home");
 }
 
 export default function Login() {
