@@ -7,7 +7,7 @@ const handleCreateAcount = () => {
 }
 
 const handleLogin = () => {
-  router.push("/(tabs)/home");
+  router.push("/(tabs)/home" as any);
 }
 
 export default function Login() {
