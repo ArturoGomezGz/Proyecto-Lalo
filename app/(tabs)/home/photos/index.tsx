@@ -4,14 +4,12 @@ import {
     Text
 } from "react-native";
 
+import styles from "../styles";
+
 export default function Photos() {
     return (
-        <View>
-            <Text>Photos Screen</Text>
+        <View style={styles.container}>
+            <Text style={styles.label}>Photos Screen</Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-
-});

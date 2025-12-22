@@ -4,14 +4,13 @@ import {
     Text
 } from "react-native";
 
+import styles from "../styles";
+
 export default function Audios() {
     return (
-        <View>
-            <Text>Audios Screen</Text>
+        <View style={styles.container}>
+            <Text style={styles.label}>Audios Screen</Text>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
-
-});
