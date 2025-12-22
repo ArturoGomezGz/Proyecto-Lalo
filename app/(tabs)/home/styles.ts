@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     label: {
-        fontSize: 18,
+        fontSize: 26,
         fontWeight: "bold",
         margin: 10
     }
