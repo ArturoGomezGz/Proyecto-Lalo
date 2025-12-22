@@ -5,19 +5,22 @@ import {
 } from "react-native";
 import { useState } from "react";
 import Button from "./button";
+import Header from "./header";
 
 interface Props {
+    username?: string,
+    email?: string,
     unactiveColor?: string
     activeColor?: string
 }
 
-export default function NavBar({ unactiveColor, activeColor }: Props) {
+export default function NavBar({ username, email, unactiveColor, activeColor }: Props) {
 
     const [activeTab, setActiveTab] = useState<string>("Videos");
 
     return (
         <View>
-            <Text>navBar</Text>
+            <Header username={username} email={email} />
 
             <View style={styles.buttonContainer}>
                 <Button
