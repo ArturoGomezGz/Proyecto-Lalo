@@ -2,8 +2,7 @@ import {
     StyleSheet, 
     View,
     Text,
-    TouchableOpacity,
-    ActivityIndicator
+    TouchableOpacity
 } from "react-native";
 
 interface Props {
@@ -11,26 +10,36 @@ interface Props {
     unactiveColor?: string
     activeColor?: string
     isActive?: boolean
+    toggleActive?: () => void
 }
 
-export default function Button({label, unactiveColor, activeColor, isActive}: Props) {
+export default function Button({
+    label, 
+    unactiveColor = "gray", 
+    activeColor = "orange", 
+    isActive = false,
+    toggleActive
+}: Props) {
     return (
-        <TouchableOpacity style={styles.button}>
-            <Text>{label}</Text>
-            <View style={styles.indicator}/>
+        <TouchableOpacity 
+            onPress={toggleActive} 
+            style={[styles.button, isActive && {borderBottomColor: activeColor}] }>
+
+            <Text style={{color: isActive ? activeColor : unactiveColor}}>{label}</Text>
+            <View style={[styles.indicator, isActive && {backgroundColor: activeColor}]}/>
+
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "orange",
         paddingVertical: 20,
         paddingHorizontal: 0
     },
     indicator:{
-        backgroundColor: "purple",
-        height: 8,
+        backgroundColor: "none",
+        height: 4,
         width: "100%",
         borderTopStartRadius: 50,
         borderTopEndRadius: 50,

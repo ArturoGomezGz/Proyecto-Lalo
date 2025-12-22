@@ -10,7 +10,7 @@ export default function createAcount() {
             alignItems: "center",
             }}
         >
-            <CreateAcountCard verticalSpace={20}/>
+            <CreateAcountCard verticalSpace={20} color="#8744e4ff"/>
         </View>
     );
 }

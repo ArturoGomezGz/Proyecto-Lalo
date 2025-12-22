@@ -23,6 +23,7 @@ export default function Login() {
         verticalSpace={20}
         handleLogin={handleLogin}
         handleCreateAcount={handleCreateAcount}
+        color="#8744e4ff"
       />
     </View>
   );
