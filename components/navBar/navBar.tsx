@@ -1,11 +1,15 @@
 import {
     StyleSheet,
     View,
-    Text
+    Text   
 } from "react-native";
 import { useState } from "react";
 import Button from "./button";
 import Header from "./header";
+import { 
+    usePathname, 
+    router 
+} from "expo-router";
 
 interface Props {
     username?: string,
@@ -16,7 +20,7 @@ interface Props {
 
 export default function NavBar({ username, email, unactiveColor, activeColor }: Props) {
 
-    const [activeTab, setActiveTab] = useState<string>("Videos");
+    const pathName = usePathname();
 
     return (
         <View>
@@ -25,24 +29,24 @@ export default function NavBar({ username, email, unactiveColor, activeColor }: 
             <View style={styles.buttonContainer}>
                 <Button
                     label="Videos"
-                    isActive={activeTab === "Videos"}
-                    toggleActive={() => setActiveTab("Videos")}
+                    isActive={pathName === "/home/videos"}
+                    handlePress={() => router.push("/home/videos" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />
 
                 <Button
                     label="Photos"
-                    isActive={activeTab === "Photos"}
-                    toggleActive={() => setActiveTab("Photos")}
+                    isActive={pathName === "/home/photos"}
+                    handlePress={() => router.push("/home/photos" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />
 
                 <Button
                     label="Audios"
-                    isActive={activeTab === "Audios"}
-                    toggleActive={() => setActiveTab("Audios")}
+                    isActive={pathName === "/home/audios"}
+                    handlePress={() => router.push("/home/audios" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />

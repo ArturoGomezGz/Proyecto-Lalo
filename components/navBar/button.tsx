@@ -10,7 +10,7 @@ interface Props {
     unactiveColor?: string
     activeColor?: string
     isActive?: boolean
-    toggleActive?: () => void
+    handlePress?: () => void
 }
 
 export default function Button({
@@ -18,11 +18,11 @@ export default function Button({
     unactiveColor = "gray", 
     activeColor = "orange", 
     isActive = false,
-    toggleActive
+    handlePress
 }: Props) {
     return (
         <TouchableOpacity 
-            onPress={toggleActive} 
+            onPress={handlePress} 
             style={[styles.button, isActive && {borderBottomColor: activeColor}] }>
 
             <Text style={{color: isActive ? activeColor : unactiveColor}}>{label}</Text>
