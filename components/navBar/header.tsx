@@ -2,8 +2,10 @@ import {
     StyleSheet,
     View,
     Text,
-    Image
+    Image,
+    TouchableOpacity
 } from "react-native";
+import { router } from "expo-router";
 
 interface Props {
     username?: string;
@@ -13,9 +15,12 @@ interface Props {
 export default function Header({ username = "Guest", email = "No email provided" }: Props) {
     return (
         <View style={styles.container}>
-            <Image 
+            <TouchableOpacity onPress={()=> router.push("/(auth)/login")}>
+                <Image 
                 source={require("../../assets/images/profileImage.png")}
-                style={styles.image}/>
+                style={styles.image}
+                />
+            </TouchableOpacity>
             <View style={styles.textContainer}>
                 <Text>{username}</Text>
                 <Text>{email}</Text>
