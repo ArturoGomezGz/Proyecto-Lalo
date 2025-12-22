@@ -1,7 +1,9 @@
 import { 
     StyleSheet, 
     View,
-    Text
+    Text,
+    TouchableOpacity,
+    ActivityIndicator
 } from "react-native";
 
 interface Props {
@@ -13,13 +15,27 @@ interface Props {
 
 export default function Button({label, unactiveColor, activeColor, isActive}: Props) {
     return (
-        <View>
+        <TouchableOpacity style={styles.button}>
             <Text>{label}</Text>
-
-        </View>
+            <View style={styles.indicator}/>
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-
+    button: {
+        backgroundColor: "orange",
+        paddingVertical: 20,
+        paddingHorizontal: 0
+    },
+    indicator:{
+        backgroundColor: "purple",
+        height: 8,
+        width: "100%",
+        borderTopStartRadius: 50,
+        borderTopEndRadius: 50,
+        position: "absolute",
+        bottom: 0,
+        left: 0
+    }
 });
