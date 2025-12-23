@@ -12,7 +12,8 @@ interface Props {
     password?: boolean,
     backgroundColor?: string,
     fontColor?: string,
-    verticalSpace?: number
+    verticalSpace?: number,
+    onChangeText?: (text: string) => void;
 }
 
 export default function Input(
@@ -22,7 +23,8 @@ export default function Input(
         password = false,
         backgroundColor = 'white',
         fontColor = 'black',
-        verticalSpace = 30
+        verticalSpace = 30,
+        onChangeText
     }: Props){
     return (
         <View style = {[styles.container, {backgroundColor: backgroundColor, marginBottom: verticalSpace}]} >
@@ -34,6 +36,7 @@ export default function Input(
                 ]}
                 placeholder={placeholderName}
                 secureTextEntry={password}
+                onChangeText={onChangeText}
             />
         </View>
     )

@@ -15,7 +15,7 @@ interface Props {
     handleCreateAcount?: () => void
 }
 
-export default function LoginCard({color = "#8744e4ff", backgroundColor = "white", verticalSpace, handleLogin, handleCreateAcount}: Props) {
+export default function LoginCard({color = "red", backgroundColor = "white", verticalSpace, handleLogin, handleCreateAcount}: Props) {
     return (
         <View style={{width: "85%"}}>
             <View>
