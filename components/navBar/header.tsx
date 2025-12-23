@@ -10,12 +10,13 @@ import { router } from "expo-router";
 interface Props {
     username?: string;
     email?: string;
+    logout?: () => void
 }
 
-export default function Header({ username = "Guest", email = "No email provided" }: Props) {
+export default function Header({ username = "Guest", email = "No email provided", logout}: Props) {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={()=> router.push("/(auth)/login")}>
+            <TouchableOpacity onPress={logout}>
                 <Image 
                 source={require("../../assets/images/profileImage.png")}
                 style={styles.image}

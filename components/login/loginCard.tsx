@@ -13,9 +13,19 @@ interface Props {
     verticalSpace? : number
     handleLogin?: () => void
     handleCreateAcount?: () => void
+    emailHandleChange?: (text: string) => void
+    passwordHandleChange?: (text: string) => void
 }
 
-export default function LoginCard({color = "red", backgroundColor = "white", verticalSpace, handleLogin, handleCreateAcount}: Props) {
+export default function LoginCard({
+        color = "red", 
+        backgroundColor = "white", 
+        verticalSpace, 
+        handleLogin, 
+        handleCreateAcount,
+        emailHandleChange,
+        passwordHandleChange
+    }: Props) {
     return (
         <View style={{width: "85%"}}>
             <View>
@@ -24,8 +34,8 @@ export default function LoginCard({color = "red", backgroundColor = "white", ver
                     style={[styles.image, {borderColor: color}]} 
                 />
             </View>
-            <Input labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor={backgroundColor} fontColor={color} password={false} verticalSpace={verticalSpace}/>
-            <Input labelName="Contraseña" placeholderName="********" backgroundColor={backgroundColor} fontColor={color} password={true} verticalSpace={verticalSpace}/>
+            <Input onChangeText={emailHandleChange} labelName="Correo" placeholderName="nombre@dominio.com" backgroundColor={backgroundColor} fontColor={color} password={false} verticalSpace={verticalSpace}/>
+            <Input onChangeText={passwordHandleChange} labelName="Contraseña" placeholderName="********" backgroundColor={backgroundColor} fontColor={color} password={true} verticalSpace={verticalSpace}/>
             <PrimaryBtn buttonLabel="Iniciar Sesion" backgroundColor={color} onPress={handleLogin} verticalSpace={verticalSpace}/>
             <SecondaryBtn buttonLabel="Registrarse" backgroundColor={color} onPress={handleCreateAcount} verticalSpace={verticalSpace}/>
         </View>
