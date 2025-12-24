@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     label: {
         fontSize: 26,
         fontWeight: "bold",
+        textAlign: "center",
     }
 });
 

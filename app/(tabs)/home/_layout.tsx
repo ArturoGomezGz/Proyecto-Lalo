@@ -1,5 +1,5 @@
 import NavBar from "@/components/navBar/navBar";
-import { router, Slot } from "expo-router";
+import { router, Tabs } from "expo-router";
 import {
     StyleSheet,
     View,
@@ -18,7 +18,11 @@ export default function HomeLayout() {
             <SafeAreaView style={styles.safeArea}>
                 <NavBar handleProfileClick={snedToProfile} activeColor="#8744e4ff" unactiveColor="gray" username="Arturo Gomez Gomez" email="correo@dominio.com"/>
                 <View style={{flex: 1}}>
-                    <Slot />
+                    <Tabs screenOptions={{headerShown: false, tabBarStyle: {display: 'none'}}}>
+                        <Tabs.Screen name="videos/index" />
+                        <Tabs.Screen name="photos/index" />
+                        <Tabs.Screen name="audios/index"  />
+                    </Tabs>
                 </View>
             </SafeAreaView>
         </>

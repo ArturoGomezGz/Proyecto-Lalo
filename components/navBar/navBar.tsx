@@ -31,7 +31,7 @@ export default function NavBar({ username, email, unactiveColor, activeColor, ha
                 <Button
                     label="Videos"
                     isActive={pathName === "/home/videos"}
-                    handlePress={() => router.push("/home/videos" as any)}
+                    handlePress={() => router.replace("/home/videos" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />
@@ -39,7 +39,7 @@ export default function NavBar({ username, email, unactiveColor, activeColor, ha
                 <Button
                     label="Photos"
                     isActive={pathName === "/home/photos"}
-                    handlePress={() => router.push("/home/photos" as any)}
+                    handlePress={() => router.replace("/home/photos" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />
@@ -47,7 +47,7 @@ export default function NavBar({ username, email, unactiveColor, activeColor, ha
                 <Button
                     label="Audios"
                     isActive={pathName === "/home/audios"}
-                    handlePress={() => router.push("/home/audios" as any)}
+                    handlePress={() => router.replace("/home/audios" as any)}
                     unactiveColor={unactiveColor}
                     activeColor={activeColor}
                 />
