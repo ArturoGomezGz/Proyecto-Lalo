@@ -1,24 +1,22 @@
 import NavBar from "@/components/navBar/navBar";
-import { Slot } from "expo-router";
+import { router, Slot } from "expo-router";
 import {
     StyleSheet,
     View,
     StatusBar
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { signOut } from "firebase/auth";
-import { auth } from "@/firebase/firebase"
 
 export default function HomeLayout() {
-    const logout = async () => {
-        await signOut(auth);
+    const snedToProfile = () => {
+        router.push("/profile");
     }
 
     return (
         <>
             <StatusBar barStyle="light-content" />
             <SafeAreaView style={styles.safeArea}>
-                <NavBar logout={logout} activeColor="#8744e4ff" unactiveColor="gray" username="Arturo Gomez Gomez" email="correo@dominio.com"/>
+                <NavBar handleProfileClick={snedToProfile} activeColor="#8744e4ff" unactiveColor="gray" username="Arturo Gomez Gomez" email="correo@dominio.com"/>
                 <View style={{flex: 1}}>
                     <Slot />
                 </View>

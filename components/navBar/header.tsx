@@ -10,23 +10,21 @@ import { router } from "expo-router";
 interface Props {
     username?: string;
     email?: string;
-    logout?: () => void
+    handleProfileClick?: () => void
 }
 
-export default function Header({ username = "Guest", email = "No email provided", logout}: Props) {
+export default function Header({ username = "Guest", email = "No email provided", handleProfileClick}: Props) {
     return (
-        <View style={styles.container}>
-            <TouchableOpacity onPress={logout}>
-                <Image 
-                source={require("../../assets/images/profileImage.png")}
-                style={styles.image}
-                />
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.container} onPress={handleProfileClick}>
+            <Image 
+            source={require("../../assets/images/profileImage.png")}
+            style={styles.image}
+            />
             <View style={styles.textContainer}>
                 <Text>{username}</Text>
                 <Text>{email}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 

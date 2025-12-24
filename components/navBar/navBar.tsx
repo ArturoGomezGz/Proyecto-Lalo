@@ -16,16 +16,16 @@ interface Props {
     email?: string,
     unactiveColor?: string
     activeColor?: string
-    logout?: () => void
+    handleProfileClick?: () => void
 }
 
-export default function NavBar({ username, email, unactiveColor, activeColor, logout }: Props) {
+export default function NavBar({ username, email, unactiveColor, activeColor, handleProfileClick }: Props) {
 
     const pathName = usePathname();
 
     return (
         <View>
-            <Header username={username} email={email} logout={logout}/>
+            <Header username={username} email={email} handleProfileClick={handleProfileClick}/>
 
             <View style={styles.buttonContainer}>
                 <Button
