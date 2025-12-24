@@ -1,7 +1,7 @@
-import { Tabs, Redirect } from "expo-router";
+import { Stack, Redirect } from "expo-router";
 import { useAuth } from "@/context/AuthContext";
 
-export default function TabsLayout() {
+export default function StackLayout() {
     const { user, loading } = useAuth();
 
     if (loading) {
@@ -13,10 +13,10 @@ export default function TabsLayout() {
     }
 
     return (
-        <Tabs>
-            <Tabs.Screen name="home" options={{ headerShown: false }} />
-            <Tabs.Screen name="profile" options={{ headerShown: false }} />
-        </Tabs>
+        <Stack>
+            <Stack.Screen name="home" options={{ headerShown: false }}  />
+            <Stack.Screen name="profile" options={{ headerShown: false }} />
+        </Stack>
     );
 
 }

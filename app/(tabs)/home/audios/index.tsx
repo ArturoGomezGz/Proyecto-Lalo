@@ -9,7 +9,7 @@ import styles from "../styles";
 export default function Audios() {
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>Audios Screen</Text>
+            <Text style={styles.label}>Audios Screen, wasaaaaa!</Text>
         </View>
     );
 }
